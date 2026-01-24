@@ -13,6 +13,8 @@ const ImpactSection = () => {
   const [counts, setCounts] = useState(stats.map(() => 0));
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     stats.forEach((stat, index) => {
       const updateCount = () => {
         setCounts((prevCounts) => {
