@@ -11,8 +11,9 @@ import ServicesForm from "../../components/Services"
 import ImpactSection from "../../components/Impact"
 import IconSection from "../../components/HomePage/IconsSection"
 import HeaderSection from "../../components/Header"
+import HeroCarousel from "../../components/HomePage/Hero"
 
-const HeroCarousel = dynamic(() => import("../../components/HomePage/Hero"), { ssr: false })
+// const HeroCarousel = dynamic(() => import("../../components/HomePage/Hero"), { ssr: false })
 
 if (typeof window !== 'undefined') {
   require("bootstrap/dist/js/bootstrap.bundle.min.js")
