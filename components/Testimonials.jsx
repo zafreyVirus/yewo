@@ -49,7 +49,7 @@ const Testimonials = () => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   const nextSlide = () => {
     setCurrentSlide((currentSlide + 1) % slides.length);
@@ -70,11 +70,13 @@ const Testimonials = () => {
   style={{ padding: '80px' }}
   className={`testimonial-slide text-center ${index === currentSlide ? 'active' : ''}`}
 >
-  <img
+  <Image
       src={slide.image} 
       alt="User photo"
       className="d-block mx-auto mb-3" 
-      style={{ maxWidth: '150px', borderRadius: '50%' }} 
+      style={{ maxWidth: '150px', borderRadius: '50%' }}
+      width={150}
+      height={150}
   />
 
   <p className="testimonial-text">{slide.text}</p>

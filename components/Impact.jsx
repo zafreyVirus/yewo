@@ -29,7 +29,7 @@ const ImpactSection = () => {
       };
       updateCount();
     });
-  }, []);
+  }, [stats]);
 
   return (
     <div className="impact-section py-8 px-4 text-center">

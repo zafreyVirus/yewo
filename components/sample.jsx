@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { IoClose } from "react-icons/io5"; 
 
 const HeaderSection = () => {
@@ -22,7 +23,7 @@ const HeaderSection = () => {
           <div className="container d-flex align-items-center">
             <h1 className="logo me-auto">
               <Link href="/">
-                <img className="logo-img" src="/assets/img/logo.png" alt="logo" />
+                <Image className="logo-img" src="/assets/img/logo.png" alt="logo" width={100} height={60} />
               </Link>
             </h1>
 

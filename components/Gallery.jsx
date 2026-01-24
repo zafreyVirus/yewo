@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const Gallery = () => {
     const images = [
       { src: "/assets/img/11.jpg", alt: "Fresh Local Produce" },
@@ -20,11 +22,13 @@ const Gallery = () => {
             {images.map((image, index) => (
               <div key={index} className="col-lg-3 col-md-4 col-6">
                 <div className="card p-0 border-0">
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
                     className="card-img-top img-fluid"
                     style={{ objectFit: "cover", height: "200px" }}
+                    width={300}
+                    height={200}
                   />
                 </div>
               </div>

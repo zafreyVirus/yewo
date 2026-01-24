@@ -61,7 +61,7 @@ export default function Economic() {
               <div className="p-2">
               <p>
               Through job creation in rural communities, we have employed over 31 people of which  21 are women, representing 67% gender diversity. 
-              By generating income through livestock and crop sales, we have boosted household income and contributed to Malawi's agricultural GDP and poverty reduction.Subsequently contributed to:
+              By generating income through livestock and crop sales, we have boosted household income and contributed to Malawi&apos;s agricultural GDP and poverty reduction.Subsequently contributed to:
               </p>
               
               <h5   style={{ color: 'steelblue' }}>Malawi Vision 2063 Pillars</h5>

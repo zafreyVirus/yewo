@@ -180,10 +180,12 @@ const HeaderSection = () => {
             
             <div>
               <Link href="/">
-                <img
+                <Image
                   className="logo-img h-40 w-30"
                   src="/assets/img/favicon1.png"
                   alt="logo"
+                  width={120}
+                  height={160}
                 />
               </Link>
             </div>

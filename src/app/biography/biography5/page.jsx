@@ -1,16 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Biography() {
   return (
     <div className="container mx-auto mt-20 px-20 py-10">
       {/* Image */}
       <div className="flex justify-center">
-        <img
+        <Image
           src="/assets/img/team/team-5.jpg" // Replace with your image URL or path
           alt="Jacqueline Haynes"
           className="rounded-full w-60 h-60 object-cover mb-4"
-
+          width={240}
+          height={240}
         />
       </div>
 
