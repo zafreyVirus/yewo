@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const AboutSection = () => {
+function AboutSection() {
   return (
     <section className="pt-0">
       <div className="container">
@@ -12,12 +12,11 @@ const AboutSection = () => {
               <div className="image-box">
                 <div className="image-1">
                   <Image
-                    src="/assets/img/image.png"
+                    src="/assets/img/yammie.jpg"
                     alt="About Us"
                     className="rounded"
                     height={500}
-                    width={500}
-                  />
+                    width={500} />
                 </div>
 
               </div>
@@ -35,7 +34,7 @@ const AboutSection = () => {
                   textAlign: 'center'
                 }}
               >
-                <h3 className="h1 mb-1">{new Date().getFullYear() - 2020}</h3>
+                <h3 className="h1 mb-1">{new Date().getFullYear() - 2022}</h3>
                 <p className="mb-0">Years of Experience</p>
               </div>
 
@@ -52,7 +51,7 @@ const AboutSection = () => {
               <h2 className="w-lg-90 mb-1-6 mb-lg-1-9">Trusted Partners in Growth!</h2>
               <p className="mb-1-9 mb-lg-6">
                 YEWO is dedicated to empowering businesses through sustainable, ethical growth. Established in
-                2020, we specialize in tailored financial and management services that drive success across multiple
+                2022, we specialize in tailored financial and management services that drive success across multiple
                 sectors.
               </p>
 
@@ -74,7 +73,7 @@ const AboutSection = () => {
                       <h2>
                         What <span style={{ color: "steelblue" }}>We</span> Will Be
                       </h2>
-                      <p>To be a leading PE firm with profitable and sustainable businesses.</p>
+                      <p>To be a leading organization with a strong commitment to ethical practices and sustainable growth.</p>
                     </div>
 
                     <div className="text-center">
@@ -106,7 +105,7 @@ const AboutSection = () => {
       </div>
     </section>
   );
-};
+}
 
 
 

@@ -28,8 +28,8 @@ function page() {
        <AboutSection/> 
       <ServicesForm/>
       <Subsidiaries/>
-      <ImpactSection/>
-      <Testimonials/>
+      {/* <ImpactSection/> */}
+      {/* <Testimonials/> */}
 
 
     </div>
