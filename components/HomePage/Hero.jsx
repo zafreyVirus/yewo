@@ -7,21 +7,21 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 const HeroCarousel = () => {
   const slides = [
     {
-      image: "/assets/img/yeo_bg_1.jpg",
+      image: "/assets/img/hero.jpg",
       title: "Trusted Growth Partners",
       description:
         "Youth in Enterpreneurship and Wilrdlife Organization (YEWO) is dedicated to empowering startups and established businesses alike. Our comprehensive suite of services includes business consulting, market analysis, and growth strategy development, all designed to help our clients thrive in competitive markets.",
       button: { text: "Read More", link: "/services" },
     },
     {
-      image: "/assets/img/yeo_bg_1.jpg",
+      image: "/assets/img/standposterbend.jpg",
       title: "Strategic Financial Solutions",
       description:
         "From venture capital to debt financing, YEWO provides tailored financial services that fuel innovation and expansion. Our dedicated team ensures each investment is thoroughly researched, strategically managed, and positioned for long-term success.",
       button: { text: "Contact Us", link: "/contact" },
     },
     {
-      image: "/assets/img/yeo_bg_1.jpg",
+      image: "/assets/img/discuss.jpg",
       title: "Business Training & Development",
       description:
         "At YEWO, we believe that knowledge is power. Our training programs are designed to equip entrepreneurs and business leaders with the skills they need to navigate the complexities of today's business landscape. From leadership development to operational excellence, we provide the tools for success.",

@@ -24,24 +24,28 @@ const HeaderSection = () => {
             <h1 className="logo me-auto">
               <Link href="/">
                 <Image
-                src={"/assets/img/YEWOLOGO.png"}
-                alt="logo"
-                width={150}
-                height={450}
-                className="logo-img"
+                  src="/assets/img/YEWOLOGO.png"
+                  width={150}
+                  height={450}
+                  className="logo-img"
+                  style={{ width: "auto", height: "auto" }}
+                  alt="Logo"
                 />
               </Link>
             </h1>
 
             <nav id="navbar" className="navbar order-last order-lg-0">
               <ul>
-                <Link href="/impact" className="text-decoration-none">
-                  <span>Our Impact</span>
-                </Link>
+                {/* FIX 1: Wrap Link in li */}
+                <li>
+                  <Link href="/impact" className="text-decoration-none">
+                    <span>Our Impact</span>
+                  </Link>
+                </li>
+
                 <li className="dropdown">
                   <Link
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
+                    href="/about" // FIX 2: Use actual route instead of "#"
                     className="text-decoration-none"
                   >
                     <span>Who we are</span>{" "}
@@ -67,8 +71,7 @@ const HeaderSection = () => {
 
                 <li className="dropdown">
                   <Link
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
+                    href="/services" // FIX 3: Use actual route
                     className="text-decoration-none"
                   >
                     <span>What We Do</span>{" "}
@@ -82,63 +85,6 @@ const HeaderSection = () => {
                     </li>
                   </ul>
                 </li>
-
-                {/* <li className="dropdown">
-                  <Link
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
-                    className="text-decoration-none"
-                  >
-                    <span>Related Parties</span>{" "}
-                    <i className="bi bi-chevron-down"></i>
-                  </Link>
-                  <ul>
-                    <li>
-                      <Link
-                        href="/zananifoundation"
-                        className="text-decoration-none"
-                      >
-                        <span>Zanani Foundation</span>
-                      </Link>
-                    </li>
-                    <li className="dropdown">
-                      <Link
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
-                        className="text-decoration-none"
-                      >
-                        <span>Zanani Farms</span>{" "}
-                        <i className="bi bi-chevron-down"></i>
-                      </Link>
-                      <ul>
-                        <li>
-                          <Link
-                            href="/subsidiary/food"
-                            className="text-decoration-none"
-                          >
-                            Tara Foods
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/subsidiary/poultry"
-                            className="text-decoration-none"
-                          >
-                            Rayen Poultry
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="/subsidiary/dairy"
-                            className="text-decoration-none"
-                          >
-                            Rayen Dairy
-                          </Link>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li> */}
 
                 <li>
                   <Link href="/contact" className="text-decoration-none">
@@ -177,7 +123,6 @@ const HeaderSection = () => {
         // Menu List View
         <header id="header" className="fixed-top px-10">
           <div className="container d-flex justify-content-between align-items-center">
-            
             <div>
               <Link href="/">
                 <Image
@@ -190,7 +135,6 @@ const HeaderSection = () => {
               </Link>
             </div>
 
-            
             <div>
               <button
                 className="p-2 text-3xl text-gray-500 hover:text-black"
@@ -202,72 +146,56 @@ const HeaderSection = () => {
           </div>
 
           <ul className="list-none text-center">
-            <li
-              onClick={handleBackClick}
-              className="list-group-item text-decoration-none"
-            >
-              <Link className="text-decoration-none text-black" href="/impact">
+            {/* FIX 4: Move onClick to Link component, not li */}
+            <li className="list-group-item text-decoration-none">
+              <Link
+                className="text-decoration-none text-black"
+                href="/impact"
+                onClick={handleBackClick} // onClick moved here
+              >
                 Our impact
               </Link>
             </li>
 
-            <li onClick={handleBackClick} className="py-2 hover:bg-gray-100">
-              <Link className="text-decoration-none text-black" href="/about">
+            <li className="py-2 hover:bg-gray-100">
+              <Link
+                className="text-decoration-none text-black"
+                href="/about"
+                onClick={handleBackClick}
+              >
                 Who we are
               </Link>
             </li>
 
-            <li onClick={handleBackClick} className="py-2 hover:bg-gray-100">
-              <Link className="text-decoration-none text-black" href="/team">
+            <li className="py-2 hover:bg-gray-100">
+              <Link
+                className="text-decoration-none text-black"
+                href="/team"
+                onClick={handleBackClick}
+              >
                 Team
               </Link>
             </li>
 
-            <li onClick={handleBackClick} className="py-2 hover:bg-gray-100">
+            <li className="py-2 hover:bg-gray-100">
               <Link
                 className="text-decoration-none text-black"
                 href="/services"
+                onClick={handleBackClick}
               >
                 What we do
               </Link>
             </li>
-            <li onClick={handleBackClick} className="py-2 hover:bg-gray-100">
-              <Link className="text-decoration-none text-black" href="/contact">
+
+            <li className="py-2 hover:bg-gray-100">
+              <Link
+                className="text-decoration-none text-black"
+                href="/contact"
+                onClick={handleBackClick}
+              >
                 Contact
               </Link>
             </li>
-            {/* <li onClick={handleBackClick} className="py-2 hover:bg-gray-100">
-              <Link
-                className="text-decoration-none text-black"
-                href="/subsidiary/food"
-              >
-                Tara Foods Ltd
-              </Link>
-            </li>
-            <li onClick={handleBackClick} className="py-2 hover:bg-gray-100">
-              <Link
-                className="text-decoration-none text-black"
-                href="/subsidiary/dairy"
-              >
-                Rayen Dairy Ltd
-              </Link>
-            </li>
-            <li onClick={handleBackClick} className="py-2 hover:bg-gray-100">
-              <Link
-                className="text-decoration-none text-black"
-                href="/subsidiary/poultry"
-              >
-                Rayen Poultry Ltd
-              </Link>
-            </li>
-            <li onClick={handleBackClick} className="py-2 hover:bg-gray-100">
-              <Link
-                href="/zananifoundation"
-                className="text-decoration-none text-black"
-              >
-                <span>Zanani Foundation</span>
-              </Link>
-            </li> */}
           </ul>
         </header>
       )}

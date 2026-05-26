@@ -11,27 +11,39 @@ const ImpactSection = () => {
   ];
 
   const [counts, setCounts] = useState(stats.map(() => 0));
+  const [animationStarted, setAnimationStarted] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    // Only run animation once
+    if (animationStarted) return;
+    
+    setAnimationStarted(true);
+    
+    const timeouts = [];
     
     stats.forEach((stat, index) => {
-      const updateCount = () => {
+      const increment = () => {
         setCounts((prevCounts) => {
           const updatedCounts = [...prevCounts];
           if (updatedCounts[index] < stat.target) {
             updatedCounts[index] = Math.min(
-              updatedCounts[index] + Math.ceil(stat.target / 200),
+              updatedCounts[index] + Math.ceil(stat.target / 50),
               stat.target
             );
-            requestAnimationFrame(updateCount);
+            // Schedule next increment
+            timeouts.push(setTimeout(increment, 20));
           }
           return updatedCounts;
         });
       };
-      updateCount();
+      increment();
     });
-  }, [stats]);
+    
+    // Cleanup timeouts
+    return () => {
+      timeouts.forEach(timeout => clearTimeout(timeout));
+    };
+  }, [animationStarted, stats]);
 
   return (
     <div className="impact-section py-8 px-4 text-center">
@@ -52,15 +64,15 @@ const ImpactSection = () => {
             <div
               className="text-4xl mb-4 p-3 flex items-center justify-center"
               style={{
-                width: '80px',  // Set fixed width
-                height: '80px',  // Set fixed height
-                borderRadius: '50%',  // Ensure circular shape
-                backgroundColor: '#4682B4', // Blue circle background
-                color: 'white', // Icon color set to white
-                display: 'flex', // Enable flexbox
-                alignItems: 'center', // Vertically center the icon
-                justifyContent: 'center', // Horizontally center the icon
-                fontSize: '2rem', // Adjust icon size inside the circle
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                backgroundColor: '#4682B4',
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '2rem',
               }}
             >
               {stat.icon}
