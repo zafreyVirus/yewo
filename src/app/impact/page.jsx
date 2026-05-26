@@ -39,7 +39,7 @@ export default function Services() {
 <Environmental/>
 <Women/>
 
-      <Testimonials />
+      {/* <Testimonials /> */}
     </div>
   );
 }

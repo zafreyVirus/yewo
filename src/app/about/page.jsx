@@ -35,7 +35,7 @@ export default function AboutPage() {
       <MissionVision/>
       <CoreValues/>
       <TeamSection/>
-      <Testimonials/>
+      {/* <Testimonials/> */}
       <MapSection/>
     </div>
   );
